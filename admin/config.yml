@@ -1,7 +1,7 @@
 backend:
   name: github
   repo: hammamibnu0605-byte/portofolio-hammam
-  branch: utama 
+  branch: main
 
 media_folder: "assets/images"
 public_folder: "/assets/images"
