@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Helmet Classification & Violation Tracking | Hammam</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@600;700&display=swap');
+        body { background-color: #12151c; color: #94a3b8; font-family: 'Inter', sans-serif; }
+        h1, h2, h3 { font-family: 'Playfair Display', serif; color: #f8fafc; }
+    </style>
+</head>
+<body class="antialiased min-h-screen p-6 md:p-12">
+    <div class="max-w-5xl mx-auto">
+        <!-- Tombol Kembali -->
+        <a href="index.html#projects" class="inline-flex items-center gap-2 text-[#60a5fa] hover:text-white transition mb-8 text-sm font-medium">
+            <i class="fa-solid fa-arrow-left"></i> Back to Portfolio
+        </a>
+
+        <!-- Header & Deskripsi Utama Proyek -->
+        <div class="mb-12">
+            <div class="flex flex-wrap gap-2 text-xs font-medium text-[#60a5fa] mb-4">
+                <span class="bg-[#1f2430] border border-[#2e3545] px-3 py-1 rounded-full">Computer Vision</span>
+                <span class="bg-[#1f2430] border border-[#2e3545] px-3 py-1 rounded-full">Multi-Class Classification</span>
+                <span class="bg-[#1f2430] border border-[#2e3545] px-3 py-1 rounded-full">Traffic Violation Monitoring</span>
+                <span class="bg-[#1f2430] border border-[#2e3545] px-3 py-1 rounded-full">Python</span>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-bold mb-6">Helmet Classification & Violation System</h1>
+            
+            <p class="text-lg font-light leading-relaxed mb-6 text-[#cbd5e1] max-w-4xl">
+                An intelligent traffic surveillance pipeline designed to detect motorcycles, localize riders, and classify helmet compliance across dense multi-vehicle road environments. The system differentiates compliant riders (<code class="text-emerald-400">Driver Helmet</code>) from violators (<code class="text-rose-400">Driver No Helmet</code>) while maintaining a live violation counter and frame-level telemetry.
+            </p>
+
+            <!-- 3 Pilar Teknis Proyek -->
+            <div class="grid md:grid-cols-3 gap-4 mt-8">
+                <div class="bg-[#181c26] p-5 rounded-2xl border border-[#2e3545]">
+                    <i class="fa-solid fa-layer-group text-[#60a5fa] text-xl mb-3"></i>
+                    <h4 class="text-white font-semibold mb-1 text-sm font-sans">Hierarchical Entity Detection</h4>
+                    <p class="text-xs font-light leading-relaxed">Simultaneously detects motorcycles (<code class="text-[#60a5fa]">Bike</code>), riders (<code class="text-[#60a5fa]">Driver</code>), and head-region helmet states in crowded traffic.</p>
+                </div>
+                <div class="bg-[#181c26] p-5 rounded-2xl border border-[#2e3545]">
+                    <i class="fa-solid fa-triangle-exclamation text-[#60a5fa] text-xl mb-3"></i>
+                    <h4 class="text-white font-semibold mb-1 text-sm font-sans">Automated Violation Counter</h4>
+                    <p class="text-xs font-light leading-relaxed">Flags non-helmeted riders with distinct red bounding boxes and increments the active violation log in real time.</p>
+                </div>
+                <div class="bg-[#181c26] p-5 rounded-2xl border border-[#2e3545]">
+                    <i class="fa-solid fa-gauge-high text-[#60a5fa] text-xl mb-3"></i>
+                    <h4 class="text-white font-semibold mb-1 text-sm font-sans">Live Telemetry & Tracking</h4>
+                    <p class="text-xs font-light leading-relaxed">Integrates object ID assignment, frame indexing, timestamping, and live FPS monitoring for video stream evaluation.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tampilan Hasil Klasifikasi -->
+        <h2 class="text-2xl font-bold mb-6">Traffic Scene Classification Output</h2>
+        <div class="bg-[#1f2430] p-6 rounded-3xl border border-[#2e3545] shadow-lg">
+            <div class="bg-[#12151c] rounded-2xl p-4 mb-6 flex items-center justify-center border border-[#2e3545]/60">
+                <img src="Klasifikasi%20helm.png" alt="Helmet Classification Output" class="max-h-[520px] w-auto object-contain rounded-xl shadow-md">
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-6 items-start">
+                <div>
+                    <h3 class="text-xl font-bold mb-2 font-sans text-white">Multi-Vehicle Helmet Compliance Analysis</h3>
+                    <p class="text-sm font-light leading-relaxed">
+                        Across three tracked motorcycles in a dense urban road scene, the model accurately distinguishes two compliant riders wearing helmets (green boxes with <strong class="text-emerald-400 font-medium">0.71</strong> and <strong class="text-emerald-400 font-medium">0.46</strong> helmet confidence) and flags one rider without a helmet (<strong class="text-rose-400 font-medium">Driver No Helmet 0.72</strong>), updating the live violation counter to <strong class="text-white font-medium">1</strong>.
+                    </p>
+                </div>
+                <div class="bg-[#181c26] p-4 rounded-2xl border border-[#2e3545] text-xs space-y-2">
+                    <div class="flex justify-between border-b border-[#2e3545] pb-2">
+                        <span class="text-[#94a3b8]">Detected Classes</span>
+                        <span class="text-white font-mono">Bike, Driver, Helmet, No Helmet</span>
+                    </div>
+                    <div class="flex justify-between border-b border-[#2e3545] pb-2">
+                        <span class="text-[#94a3b8]">Violation Detection</span>
+                        <span class="text-rose-400 font-mono">Driver No Helmet (0.72)</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="text-[#94a3b8]">Telemetry Overlay</span>
+                        <span class="text-[#60a5fa] font-medium">Frame Index, FPS & Violation Count</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
