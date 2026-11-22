@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Helmet Detection (YOLOv8) | Hammam</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@600;700&display=swap');
+        body { background-color: #12151c; color: #94a3b8; font-family: 'Inter', sans-serif; }
+        h1, h2, h3 { font-family: 'Playfair Display', serif; color: #f8fafc; }
+    </style>
+</head>
+<body class="antialiased min-h-screen p-6 md:p-12">
+    <div class="max-w-5xl mx-auto">
+        <!-- Tombol Kembali -->
+        <a href="index.html#projects" class="inline-flex items-center gap-2 text-[#60a5fa] hover:text-white transition mb-8 text-sm font-medium">
+            <i class="fa-solid fa-arrow-left"></i> Back to Portfolio
+        </a>
+
+        <!-- Header & Deskripsi Utama Proyek -->
+        <div class="mb-12">
+            <div class="flex flex-wrap gap-2 text-xs font-medium text-[#60a5fa] mb-4">
+                <span class="bg-[#1f2430] border border-[#2e3545] px-3 py-1 rounded-full">YOLOv8</span>
+                <span class="bg-[#1f2430] border border-[#2e3545] px-3 py-1 rounded-full">Computer Vision</span>
+                <span class="bg-[#1f2430] border border-[#2e3545] px-3 py-1 rounded-full">Real-Time Object Detection</span>
+                <span class="bg-[#1f2430] border border-[#2e3545] px-3 py-1 rounded-full">Python</span>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-bold mb-6">Helmet Detection System</h1>
+            
+            <p class="text-lg font-light leading-relaxed mb-6 text-[#cbd5e1] max-w-4xl">
+                An automated road-safety computer vision system built using <strong class="text-white font-medium">YOLOv8</strong> to detect motorcyclists and verify helmet compliance in real time. The model localizes riders and passengers simultaneously, distinguishing between helmeted and non-helmeted subjects to support smart traffic monitoring and automated safety enforcement.
+            </p>
+
+            <!-- 3 Pilar Teknis Proyek -->
+            <div class="grid md:grid-cols-3 gap-4 mt-8">
+                <div class="bg-[#181c26] p-5 rounded-2xl border border-[#2e3545]">
+                    <i class="fa-solid fa-bolt text-[#60a5fa] text-xl mb-3"></i>
+                    <h4 class="text-white font-semibold mb-1 text-sm font-sans">Real-Time Inference</h4>
+                    <p class="text-xs font-light leading-relaxed">Leverages single-stage YOLOv8 architecture for high-speed bounding box localization across dynamic traffic scenes.</p>
+                </div>
+                <div class="bg-[#181c26] p-5 rounded-2xl border border-[#2e3545]">
+                    <i class="fa-solid fa-users-viewfinder text-[#60a5fa] text-xl mb-3"></i>
+                    <h4 class="text-white font-semibold mb-1 text-sm font-sans">Multi-Subject Detection</h4>
+                    <p class="text-xs font-light leading-relaxed">Capable of detecting multiple riders on a single motorcycle (driver and passenger) with individual confidence scores.</p>
+                </div>
+                <div class="bg-[#181c26] p-5 rounded-2xl border border-[#2e3545]">
+                    <i class="fa-solid fa-shield-halved text-[#60a5fa] text-xl mb-3"></i>
+                    <h4 class="text-white font-semibold mb-1 text-sm font-sans">Traffic Safety Compliance</h4>
+                    <p class="text-xs font-light leading-relaxed">Trained to identify distinct safety classes such as <code class="text-[#60a5fa]">driver_with_helmet</code> under varied outdoor lighting.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tampilan Hasil Deteksi -->
+        <h2 class="text-2xl font-bold mb-6">Model Inference & Detection Result</h2>
+        <div class="bg-[#1f2430] p-6 rounded-3xl border border-[#2e3545] shadow-lg">
+            <div class="bg-[#12151c] rounded-2xl p-4 mb-6 flex items-center justify-center border border-[#2e3545]/60">
+                <img src="Yolo%20Deteksi%20Helm.jpg" alt="YOLOv8 Helmet Detection Output" class="max-h-[500px] w-auto object-contain rounded-xl shadow-md">
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-6 items-start">
+                <div>
+                    <h3 class="text-xl font-bold mb-2 font-sans text-white">Multi-Rider Helmet Detection Output</h3>
+                    <p class="text-sm font-light leading-relaxed">
+                        The model successfully isolates two individuals riding a motorcycle and classifies their helmet usage with high confidence scores: <strong class="text-white font-medium">0.91</strong> for the primary rider (<code class="text-[#60a5fa]">driver_with_helmet</code>) and <strong class="text-white font-medium">0.78</strong> for the pillion passenger.
+                    </p>
+                </div>
+                <div class="bg-[#181c26] p-4 rounded-2xl border border-[#2e3545] text-xs space-y-2">
+                    <div class="flex justify-between border-b border-[#2e3545] pb-2">
+                        <span class="text-[#94a3b8]">Architecture</span>
+                        <span class="text-white font-medium">YOLOv8 Object Detection</span>
+                    </div>
+                    <div class="flex justify-between border-b border-[#2e3545] pb-2">
+                        <span class="text-[#94a3b8]">Detected Class</span>
+                        <span class="text-[#60a5fa] font-mono">driver_with_helmet</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="text-[#94a3b8]">Peak Confidence</span>
+                        <span class="text-emerald-400 font-semibold">91.0% (0.91)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
