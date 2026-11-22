@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hammam Ibnu Adi Abdillah | AI & ML Enthusiast</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            900: '#060b19', // Very dark navy/black
+                            800: '#0a1428', // Dark navy surface
+                            700: '#112240', // Lighter navy surface
+                        },
+                        electric: '#00f0ff', // Electric blue accent
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Space Grotesk', 'sans-serif'],
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-glow': 'pulseGlow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        pulseGlow: {
+                            '0%, 100%': { opacity: 1 },
+                            '50%': { opacity: .5 },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #060b19;
+            color: #e2e8f0;
+            overflow-x: hidden;
+        }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #060b19; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #112240; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #00f0ff; 
+        }
+
+        /* Glassmorphism */
+        .glass {
+            background: rgba(10, 20, 40, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(0, 240, 255, 0.1);
+        }
+
+        .glass-card {
+            background: linear-gradient(145deg, rgba(17, 34, 64, 0.6) 0%, rgba(10, 20, 40, 0.8) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .glass-card:hover {
+            border-color: rgba(0, 240, 255, 0.5);
+            box-shadow: 0 0 20px rgba(0, 240, 255, 0.15);
+            transform: translateY(-5px);
+        }
+
+        /* Text Gradient */
+        .text-gradient {
+            background: linear-gradient(to right, #ffffff, #00f0ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Reveal Animation Classes */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Tech Background Grid */
+        .bg-grid {
+            background-size: 40px 40px;
+            background-image: 
+                linear-gradient(to right, rgba(0, 240, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(0, 240, 255, 0.03) 1px, transparent 1px);
+            mask-image: radial-gradient(circle at center, black 40%, transparent 100%);
+            -webkit-mask-image: radial-gradient(circle at center, black 40%, transparent 100%);
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-electric selection:text-navy-900 flex flex-col min-h-screen">
+
+    <!-- Background Decoration -->
+    <div class="fixed inset-0 z-[-1] pointer-events-none bg-grid opacity-50"></div>
+    <div class="fixed top-[-20%] left-[-10%] w-[50%] h-[50%] rounded-full bg-electric/5 blur-[120px] pointer-events-none z-[-1]"></div>
+    <div class="fixed bottom-[-20%] right-[-10%] w-[50%] h-[50%] rounded-full bg-blue-600/10 blur-[120px] pointer-events-none z-[-1]"></div>
+
+    <!-- Navbar -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 py-4 px-6 md:px-12 glass border-b-0">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="#" class="font-display font-bold text-xl tracking-wider text-white">
+                H<span class="text-electric">.</span>
+            </a>
+            
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex space-x-8 text-sm font-medium">
+                <a href="#home" class="text-gray-300 hover:text-electric transition-colors">Home</a>
+                <a href="#about" class="text-gray-300 hover:text-electric transition-colors">About</a>
+                <a href="#projects" class="text-gray-300 hover:text-electric transition-colors">Projects</a>
+                <a href="#skills" class="text-gray-300 hover:text-electric transition-colors">Skills</a>
+                <a href="#experience" class="text-gray-300 hover:text-electric transition-colors">Experience & Achievements</a>
+                <a href="#contact" class="text-gray-300 hover:text-electric transition-colors">Contact</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-gray-300 hover:text-white focus:outline-none">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full glass flex-col space-y-4 py-6 px-6 shadow-xl border-t border-navy-700">
+            <a href="#home" class="mobile-link block text-gray-300 hover:text-electric">Home</a>
+            <a href="#about" class="mobile-link block text-gray-300 hover:text-electric">About</a>
+            <a href="#projects" class="mobile-link block text-gray-300 hover:text-electric">Projects</a>
+            <a href="#skills" class="mobile-link block text-gray-300 hover:text-electric">Skills</a>
+            <a href="#experience" class="mobile-link block text-gray-300 hover:text-electric">Experience</a>
+            <a href="#contact" class="mobile-link block text-gray-300 hover:text-electric">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-grow">
+        
+        <!-- Hero Section -->
+        <section id="home" class="min-h-screen flex items-center justify-center pt-20 px-6 md:px-12 relative overflow-hidden">
+            <div class="max-w-7xl mx-auto w-full grid lg:grid-cols-2 gap-12 items-center">
+                
+                <div class="order-2 lg:order-1 z-10 reveal">
+                    <p class="text-electric font-mono mb-4 flex items-center gap-2">
+                        <i class="fas fa-terminal"></i> Hello World, I am
+                    </p>
+                    <h1 class="font-display text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-4 text-white">
+                        Hammam Ibnu <br>
+                        <span class="text-gradient">Adi Abdillah.</span>
+                    </h1>
+                    <h2 class="text-xl md:text-2xl text-gray-400 font-medium mb-6 font-display">
+                        Informatics Student | AI & Machine Learning Enthusiast | Future Technology Innovator
+                    </h2>
+                    <p class="text-gray-400 mb-8 max-w-xl leading-relaxed text-sm md:text-base">
+                        I am an Informatics student at Universitas Sebelas Maret with a keen interest in technology development—specifically Artificial Intelligence, Machine Learning, Computer Vision, and Data Science. I enjoy exploring new technologies, building innovative solutions, and honing my skills through various projects and collaborative experiences.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#projects" class="px-6 py-3 bg-transparent border border-electric text-electric font-medium rounded-lg hover:bg-electric/10 transition-all shadow-[0_0_15px_rgba(0,240,255,0.2)] hover:shadow-[0_0_25px_rgba(0,240,255,0.4)]">
+                            Explore My Projects
+                        </a>
+                        <a href="#" onclick="alert('Mendownload CV...'); return false;" class="px-6 py-3 bg-navy-700 text-white font-medium rounded-lg hover:bg-navy-800 transition-all border border-navy-700 hover:border-gray-500 flex items-center gap-2">
+                            <i class="fas fa-download"></i> Download CV
+                        </a>
+                        <a href="#contact" class="px-6 py-3 bg-white text-navy-900 font-bold rounded-lg hover:bg-gray-200 transition-all">
+                            Contact Me
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Abstract 3D/AI Visual Placeholder -->
+                <div class="order-1 lg:order-2 flex justify-center lg:justify-end reveal relative">
+                    <div class="relative w-72 h-72 md:w-96 md:h-96 animate-float">
+                        <!-- Futuristic Core Graphic -->
+                        <div class="absolute inset-0 rounded-full border border-electric/30 animate-[spin_10s_linear_infinite]"></div>
+                        <div class="absolute inset-4 rounded-full border border-electric/50 border-dashed animate-[spin_15s_linear_infinite_reverse]"></div>
+                        <div class="absolute inset-8 rounded-full bg-navy-800 border border-electric shadow-[0_0_40px_rgba(0,240,255,0.2)] flex items-center justify-center overflow-hidden">
+                            <i class="fas fa-brain text-6xl text-electric/80 animate-pulse-glow"></i>
+                            <div class="absolute w-full h-1 bg-electric/50 blur-sm animate-[ping_3s_infinite]"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Me Section -->
+        <section id="about" class="py-24 px-6 md:px-12 bg-navy-800/30">
+            <div class="max-w-5xl mx-auto reveal">
+                <div class="flex items-center gap-4 mb-12">
+                    <h2 class="font-display text-3xl md:text-4xl font-bold text-white">About Me</h2>
+                    <div class="h-[1px] bg-electric/30 flex-grow"></div>
+                </div>
+
+                <div class="grid md:grid-cols-12 gap-12 items-start">
+                    <div class="md:col-span-7 space-y-6 text-gray-400 leading-relaxed text-lg">
+                        <p>
+                            Focusing on the intersection of data and artificial intelligence, I delve into how machines can understand the world (Computer Vision) and make decisions (Machine Learning/Deep Learning).
+                        </p>
+                        <div class="glass-card p-6 rounded-xl border-l-4 border-l-electric">
+                            <h3 class="text-white font-semibold text-xl mb-2 flex items-center gap-2">
+                                <i class="fas fa-graduation-cap text-electric"></i> Education
+                            </h3>
+                            <p class="text-white font-medium">Bachelor’s Degree (S1) in Informatics</p>
+                            <p class="text-gray-400 text-sm">Universitas Sebelas Maret (UNS)</p>
+                        </div>
+                    </div>
+                    
+                    <div class="md:col-span-5">
+                        <div class="glass-card p-6 rounded-xl">
+                            <h3 class="text-white font-semibold mb-4 font-display flex items-center gap-2">
+                                <i class="fas fa-microchip text-electric"></i> Areas of Interest
+                            </h3>
+                            <ul class="space-y-3">
+                                <li class="flex items-center gap-3">
+                                    <i class="fas fa-check-circle text-electric text-sm"></i>
+                                    <span>Artificial Intelligence</span>
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <i class="fas fa-check-circle text-electric text-sm"></i>
+                                    <span>Machine Learning</span>
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <i class="fas fa-check-circle text-electric text-sm"></i>
+                                    <span>Deep Learning</span>
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <i class="fas fa-check-circle text-electric text-sm"></i>
+                                    <span>Computer Vision</span>
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <i class="fas fa-check-circle text-electric text-sm"></i>
+                                    <span>Data Science</span>
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <i class="fas fa-check-circle text-electric text-sm"></i>
+                                    <span>Data Mining</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Projects Section -->
+        <section id="projects" class="py-24 px-6 md:px-12">
+            <div class="max-w-6xl mx-auto">
+                <div class="flex items-center gap-4 mb-16 reveal">
+                    <h2 class="font-display text-3xl md:text-4xl font-bold text-white">Featured Projects</h2>
+                    <div class="h-[1px] bg-electric/30 flex-grow"></div>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <!-- Project 1 -->
+                    <div class="glass-card rounded-xl overflow-hidden group flex flex-col h-full reveal">
+                        <div class="h-48 overflow-hidden relative border-b border-white/5">
+                            <div class="absolute inset-0 bg-navy-900/50 group-hover:bg-transparent transition-all z-10"></div>
+                            <img src="https://placehold.co/600x400/060b19/00f0ff?text=YOLOv8+Detection" alt="Helmet Detection" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-xl font-bold text-white mb-3 group-hover:text-electric transition-colors">Helmet Detection (YOLOv8)</h3>
+                            <p class="text-sm text-gray-400 mb-6 flex-grow">A system for detecting motorcyclists and their use of helmets, utilizing object detection technology.</p>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="text-xs font-mono text-electric bg-electric/10 px-2 py-1 rounded">YOLOv8</span>
+                                <span class="text-xs font-mono text-electric bg-electric/10 px-2 py-1 rounded">Computer Vision</span>
+                                <span class="text-xs font-mono text-electric bg-electric/10 px-2 py-1 rounded">Python</span>
+                            </div>
+                            <button onclick="openModal('Helmet Detection using YOLOv8', 'A smart system based on Computer Vision designed to detect motorcyclists on the road and specifically identify whether they are wearing a helmet or not. This project implements the YOLOv8 architecture, known for its high speed and accuracy for real-time object detection.')" class="w-full py-2 border border-electric/50 text-electric rounded hover:bg-electric hover:text-navy-900 transition-all font-medium text-sm">
+                                View Details
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="glass-card rounded-xl overflow-hidden group flex flex-col h-full reveal" style="transition-delay: 100ms;">
+                        <div class="h-48 overflow-hidden relative border-b border-white/5">
+                            <div class="absolute inset-0 bg-navy-900/50 group-hover:bg-transparent transition-all z-10"></div>
+                            <img src="https://placehold.co/600x400/060b19/00f0ff?text=ViT+Classification" alt="Helmet Image Classification" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-xl font-bold text-white mb-3 group-hover:text-electric transition-colors">Helmet Image Classification</h3>
+                            <p class="text-sm text-gray-400 mb-6 flex-grow">An image classification project designed to distinguish between images of helmets and non-helmet instances using Vision Transformer (ViT).</p>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="text-xs font-mono text-electric bg-electric/10 px-2 py-1 rounded">ViT</span>
+                                <span class="text-xs font-mono text-electric bg-electric/10 px-2 py-1 rounded">Deep Learning</span>
+                            </div>
+                            <button onclick="openModal('Helmet Image Classification using Vision Transformer (ViT)', 'An advanced image classification model utilizing the Vision Transformer (ViT) architecture. Unlike traditional CNNs, ViT applies self-attention mechanisms to image patches to distinguish with high accuracy which images contain helmets and which do not.')" class="w-full py-2 border border-electric/50 text-electric rounded hover:bg-electric hover:text-navy-900 transition-all font-medium text-sm">
+                                View Details
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="glass-card rounded-xl overflow-hidden group flex flex-col h-full reveal" style="transition-delay: 200ms;">
+                        <div class="h-48 overflow-hidden relative border-b border-white/5">
+                            <div class="absolute inset-0 bg-navy-900/50 group-hover:bg-transparent transition-all z-10"></div>
+                            <img src="https://placehold.co/600x400/060b19/00f0ff?text=ReValue+WasteBank" alt="ReValue AI Waste Bank" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-xl font-bold text-white mb-3 group-hover:text-electric transition-colors">ReValue – AI Digital Waste Bank</h3>
+                            <p class="text-sm text-gray-400 mb-6 flex-grow">A concept for a digital waste bank, enhanced by AI, to identify types of non-organic waste and estimate their weight and economic value.</p>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="text-xs font-mono text-electric bg-electric/10 px-2 py-1 rounded">AI Concept</span>
+                                <span class="text-xs font-mono text-electric bg-electric/10 px-2 py-1 rounded">Machine Learning</span>
+                                <span class="text-xs font-mono text-electric bg-electric/10 px-2 py-1 rounded">Innovation</span>
+                            </div>
+                            <button onclick="openModal('ReValue – AI Digital Waste Bank', 'An innovative concept for modern waste management. ReValue is a digital waste bank that integrates Artificial Intelligence to automatically identify types of non-organic waste (plastic, metal, glass, etc.) through image recognition, estimating their weight and converting it into economic value (rewards) for users.')" class="w-full py-2 border border-electric/50 text-electric rounded hover:bg-electric hover:text-navy-900 transition-all font-medium text-sm">
+                                View Details
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Skills Section -->
+        <section id="skills" class="py-24 px-6 md:px-12 bg-navy-800/30">
+            <div class="max-w-6xl mx-auto">
+                <div class="flex items-center gap-4 mb-16 reveal">
+                    <h2 class="font-display text-3xl md:text-4xl font-bold text-white">Technical Skills</h2>
+                    <div class="h-[1px] bg-electric/30 flex-grow"></div>
+                </div>
+
+                <div class="flex flex-wrap justify-center gap-4 md:gap-6 reveal">
+                    <!-- Skill Badges -->
+                    <div class="glass-card px-6 py-4 rounded-xl flex items-center gap-3 w-[45%] md:w-auto">
+                        <i class="fab fa-python text-2xl text-blue-400"></i>
+                        <span class="font-medium">Python</span>
+                    </div>
+                    <div class="glass-card px-6 py-4 rounded-xl flex items-center gap-3 w-[45%] md:w-auto">
+                        <i class="fas fa-code text-2xl text-gray-300"></i>
+                        <span class="font-medium">C Programming</span>
+                    </div>
+                    <div class="glass-card px-6 py-4 rounded-xl flex items-center gap-3 w-[45%] md:w-auto">
+                        <i class="fas fa-brain text-2xl text-purple-400"></i>
+                        <span class="font-medium">Machine Learning</span>
+                    </div>
+                    <div class="glass-card px-6 py-4 rounded-xl flex items-center gap-3 w-[45%] md:w-auto">
+                        <i class="fas fa-network-wired text-2xl text-electric"></i>
+                        <span class="font-medium">Deep Learning</span>
+                    </div>
+                    <div class="glass-card px-6 py-4 rounded-xl flex items-center gap-3 w-[45%] md:w-auto">
+                        <i class="fas fa-eye text-2xl text-green-400"></i>
+                        <span class="font-medium">Computer Vision</span>
+                    </div>
+                    <div class="glass-card px-6 py-4 rounded-xl flex items-center gap-3 w-[45%] md:w-auto">
+                        <i class="fas fa-database text-2xl text-yellow-400"></i>
+                        <span class="font-medium">Data Mining</span>
+                    </div>
+                    <div class="glass-card px-6 py-4 rounded-xl flex items-center gap-3 w-[45%] md:w-auto">
+                        <i class="fas fa-crosshairs text-2xl text-red-400"></i>
+                        <span class="font-medium">YOLOv8</span>
+                    </div>
+                    <div class="glass-card px-6 py-4 rounded-xl flex items-center gap-3 w-[45%] md:w-auto">
+                        <i class="fas fa-layer-group text-2xl text-blue-300"></i>
+                        <span class="font-medium">Vision Transformer</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience & Achievements -->
+        <section id="experience" class="py-24 px-6 md:px-12">
+            <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-16">
+                
+                <!-- Leadership & Org Experience -->
+                <div class="reveal">
+                    <div class="flex items-center gap-4 mb-10">
+                        <i class="fas fa-users text-2xl text-electric"></i>
+                        <h2 class="font-display text-2xl md:text-3xl font-bold text-white">Leadership & Organization</h2>
+                    </div>
+                    
+                    <div class="relative border-l border-electric/30 ml-3 space-y-8 pb-4">
+                        <!-- Item 1 -->
+                        <div class="relative pl-8">
+                            <div class="absolute -left-1.5 top-1.5 w-3 h-3 bg-electric rounded-full shadow-[0_0_10px_#00f0ff]"></div>
+                            <h3 class="text-xl font-bold text-white">Chairperson</h3>
+                            <p class="text-electric font-medium mb-2">Informatics Student Association, Kebumen</p>
+                        </div>
+                        <!-- Item 2 -->
+                        <div class="relative pl-8">
+                            <div class="absolute -left-1.5 top-1.5 w-3 h-3 bg-electric rounded-full shadow-[0_0_10px_#00f0ff]"></div>
+                            <h3 class="text-xl font-bold text-white">Head of Interests and Talents Division</h3>
+                            <p class="text-electric font-medium mb-2">IMAKES UNS</p>
+                        </div>
+                        <!-- Item 3 -->
+                        <div class="relative pl-8">
+                            <div class="absolute -left-1.5 top-1.5 w-3 h-3 bg-electric rounded-full shadow-[0_0_10px_#00f0ff]"></div>
+                            <h3 class="text-xl font-bold text-white">Head of the PIP Division</h3>
+                            <p class="text-electric font-medium mb-2">PD IPM Kebumen</p>
+                        </div>
+                        <!-- Item 4 -->
+                        <div class="relative pl-8">
+                            <div class="absolute -left-1.5 top-1.5 w-3 h-3 bg-electric rounded-full shadow-[0_0_10px_#00f0ff]"></div>
+                            <h3 class="text-xl font-bold text-white">Literacy Ambassador</h3>
+                            <p class="text-electric font-medium mb-2">Kebumen</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Achievements -->
+                <div class="reveal" style="transition-delay: 200ms;">
+                    <div class="flex items-center gap-4 mb-10">
+                        <i class="fas fa-trophy text-2xl text-electric"></i>
+                        <h2 class="font-display text-2xl md:text-3xl font-bold text-white">Achievements</h2>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div class="glass-card p-4 rounded-xl flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-full bg-electric/10 flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-medal text-electric text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-bold">2nd Place, National Essay Competition</h4>
+                            </div>
+                        </div>
+                        
+                        <div class="glass-card p-4 rounded-xl flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-full bg-electric/10 flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-medal text-electric text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-bold">2nd Place, Debate Competition</h4>
+                                <p class="text-sm text-gray-400">Kedu and Banyumas Raya Residency</p>
+                            </div>
+                        </div>
+
+                        <div class="glass-card p-4 rounded-xl flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-full bg-electric/10 flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-medal text-electric text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-bold">3rd Place, Literacy Ambassador of Kebumen</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-24 px-6 md:px-12 bg-navy-800/30 text-center relative overflow-hidden">
+            <!-- Glow background -->
+            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full max-w-lg h-64 bg-electric/5 rounded-full blur-[100px] pointer-events-none z-[-1]"></div>
+            
+            <div class="max-w-3xl mx-auto reveal">
+                <h2 class="font-display text-4xl md:text-5xl font-bold text-white mb-6">Let's Connect</h2>
+                <p class="text-gray-400 mb-10 text-lg">
+                    Interested in collaborating, discussing AI, or have an exciting opportunity? Let's get in touch!
+                </p>
+
+                <div class="flex flex-wrap justify-center gap-6">
+                    <a href="mailto:placeholder@email.com" class="glass-card w-16 h-16 rounded-full flex items-center justify-center text-gray-300 hover:text-electric text-2xl transition-all hover:scale-110">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/placeholder" target="_blank" class="glass-card w-16 h-16 rounded-full flex items-center justify-center text-gray-300 hover:text-electric text-2xl transition-all hover:scale-110">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://github.com/placeholder" target="_blank" class="glass-card w-16 h-16 rounded-full flex items-center justify-center text-gray-300 hover:text-electric text-2xl transition-all hover:scale-110">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://instagram.com/placeholder" target="_blank" class="glass-card w-16 h-16 rounded-full flex items-center justify-center text-gray-300 hover:text-electric text-2xl transition-all hover:scale-110">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://wa.me/placeholder" target="_blank" class="glass-card w-16 h-16 rounded-full flex items-center justify-center text-gray-300 hover:text-electric text-2xl transition-all hover:scale-110">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
+                
+                <div class="mt-12">
+                    <a href="mailto:placeholder@email.com" class="inline-block px-8 py-4 border-2 border-electric text-electric font-bold rounded-lg hover:bg-electric hover:text-navy-900 transition-all shadow-[0_0_20px_rgba(0,240,255,0.2)]">
+                        Say Hello
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-8 text-center border-t border-white/5 bg-navy-900">
+        <p class="text-sm text-gray-500 font-mono">
+            &copy; 2024 Hammam Ibnu Adi Abdillah. Built with <i class="fas fa-bolt text-electric/70"></i> & AI Spirit.
+        </p>
+    </footer>
+
+    <!-- Project Detail Modal -->
+    <div id="projectModal" class="fixed inset-0 z-[100] hidden items-center justify-center px-4">
+        <!-- Overlay -->
+        <div class="absolute inset-0 bg-navy-900/90 backdrop-blur-sm" onclick="closeModal()"></div>
+        
+        <!-- Modal Content -->
+        <div class="glass-card relative w-full max-w-2xl rounded-2xl p-6 md:p-8 transform scale-95 opacity-0 transition-all duration-300 z-10" id="modalContent">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-electric transition-colors">
+                <i class="fas fa-times text-2xl"></i>
+            </button>
+            <div class="flex items-center gap-3 mb-6">
+                <i class="fas fa-microchip text-3xl text-electric"></i>
+                <h3 id="modalTitle" class="text-2xl font-bold font-display text-white">Project Title</h3>
+            </div>
+            <div class="w-full h-[1px] bg-white/10 mb-6"></div>
+            <p id="modalDesc" class="text-gray-300 leading-relaxed text-lg mb-8">
+                Project description goes here...
+            </p>
+            <div class="flex justify-end">
+                <button onclick="closeModal()" class="px-6 py-2 bg-navy-700 text-white rounded hover:bg-navy-800 border border-white/10 transition-all">
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        // --- Mobile Menu Toggle ---
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('flex');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                mobileMenu.classList.remove('flex');
+            });
+        });
+
+        // --- Navbar Scroll Effect ---
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow-lg', 'bg-navy-900/95');
+                navbar.classList.remove('py-4');
+                navbar.classList.add('py-2');
+            } else {
+                navbar.classList.remove('shadow-lg', 'bg-navy-900/95');
+                navbar.classList.add('py-4');
+                navbar.classList.remove('py-2');
+            }
+        });
+
+        // --- Scroll Reveal Animation using Intersection Observer ---
+        const revealElements = document.querySelectorAll('.reveal');
+        
+        const revealOptions = {
+            threshold: 0.15,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const revealObserver = new IntersectionObserver(function(entries, observer) {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) {
+                    return;
+                } else {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target); // Stop observing once revealed
+                }
+            });
+        }, revealOptions);
+
+        revealElements.forEach(el => {
+            revealObserver.observe(el);
+        });
+
+        // Trigger reveal for elements already in view on load
+        setTimeout(() => {
+            revealElements.forEach(el => {
+                const rect = el.getBoundingClientRect();
+                if (rect.top <= (window.innerHeight || document.documentElement.clientHeight)) {
+                    el.classList.add('active');
+                }
+            });
+        }, 100);
+
+        // --- Modal Logic ---
+        const modal = document.getElementById('projectModal');
+        const modalContent = document.getElementById('modalContent');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalDesc = document.getElementById('modalDesc');
+
+        function openModal(title, description) {
+            modalTitle.textContent = title;
+            modalDesc.textContent = description;
+            
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            
+            // Trigger animation
+            setTimeout(() => {
+                modalContent.classList.remove('scale-95', 'opacity-0');
+                modalContent.classList.add('scale-100', 'opacity-100');
+            }, 10);
+            
+            // Prevent body scroll
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            modalContent.classList.remove('scale-100', 'opacity-100');
+            modalContent.classList.add('scale-95', 'opacity-0');
+            
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+                document.body.style.overflow = 'auto';
+            }, 300); // Wait for transition
+        }
+
+        // Close modal on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>
