@@ -1,0 +1,25 @@
+backend:
+  name: github
+  repo: hammamibnu0605-byte/portofolio-hammam
+  branch: utama 
+
+media_folder: "assets/images"
+public_folder: "/assets/images"
+
+collections:
+  - name: "portfolio_data"
+    label: "Data Portofolio"
+    files:
+      - label: "Featured Projects"
+        name: "projects"
+        file: "data/projects.json"
+        fields:
+          - label: "Daftar Proyek"
+            name: "items"
+            widget: "list"
+            fields:
+              - {label: "Judul Proyek", name: "title", widget: "string"}
+              - {label: "Deskripsi", name: "description", widget: "text"}
+              - {label: "Teknologi (Gunakan koma)", name: "tech", widget: "string"}
+              - {label: "Gambar Proyek", name: "image", widget: "image"}
+              - {label: "Link Proyek", name: "link", widget: "string", required: false}
