@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hammam Ibnu Adi Abdillah | Elegant AI Portfolio</title>
+    <title>Hammam Ibnu Adi Abdillah | AI & Computer Vision Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <!-- Library Animasi Scroll (AOS) -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
     <script>
@@ -14,20 +13,19 @@
             theme: {
                 extend: {
                     colors: {
-                        /* Palet Dark Charcoal Gray & Mewah Modern */
-                        baseBg: '#12151c',       /* Abu-abu arang sangat gelap (Charcoal Obsidian) */
-                        sectionBg: '#181c26',    /* Abu-abu gelap untuk transisi antar-seksi */
-                        cardBg: '#1f2430',       /* Slate dark untuk kartu */
-                        royalBlue: '#f8fafc',    /* Putih mutiara (Pearl White) untuk judul utama */
-                        accentBlue: '#60a5fa',   /* Biru safir lembut yang elegan (Soft Sapphire) */
-                        btnBlue: '#2563eb',      /* Biru royal untuk tombol */
-                        textMain: '#f1f5f9',     /* Putih keabuan terang untuk teks utama */
-                        textMuted: '#94a3b8',    /* Abu-abu perak (Silver Slate) untuk deskripsi */
-                        softBorder: '#2e3545'    /* Garis tepi abu-abu gelap halus */
+                        baseBg: '#12151c',
+                        sectionBg: '#181c26',
+                        cardBg: '#1f2430',
+                        royalBlue: '#f8fafc',
+                        accentBlue: '#60a5fa',
+                        btnBlue: '#2563eb',
+                        textMain: '#f1f5f9',
+                        textMuted: '#94a3b8',
+                        softBorder: '#2e3545'
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
-                        serif: ['Playfair Display', 'serif'], 
+                        serif: ['Playfair Display', 'serif'],
                         mono: ['Fira Code', 'monospace'],
                     },
                     boxShadow: {
@@ -44,15 +42,13 @@
         h1, h2, h3, h4, h5 { color: #f8fafc; }
         .card-hover { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
         .card-hover:hover { transform: translateY(-8px); box-shadow: 0 20px 40px -10px rgba(96, 165, 250, 0.18); border-color: rgba(96, 165, 250, 0.45); }
-        /* Efek blur kaca gelap pada navbar modern */
         .glass-nav { background: rgba(18, 21, 28, 0.8); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); }
-        /* Kartu dengan efek kaca abu-abu gelap halus */
         .glass-card { background: rgba(31, 36, 48, 0.85); backdrop-filter: blur(10px); }
     </style>
 </head>
 <body class="antialiased selection:bg-accentBlue selection:text-baseBg">
 
-    <!-- Navbar Elegan -->
+    <!-- Navbar -->
     <nav data-aos="fade-down" data-aos-duration="1000" class="fixed w-full z-50 border-b border-softBorder glass-nav shadow-sm">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex justify-between items-center">
             <a href="#" class="text-royalBlue font-serif text-2xl font-bold tracking-tight hover:text-accentBlue transition duration-300">Hammam.</a>
@@ -67,9 +63,8 @@
 
     <!-- Hero Section -->
     <section id="home" class="min-h-screen flex items-center pt-24 pb-12 relative overflow-hidden bg-baseBg">
-        <!-- Ornamen Latar Belakang Lembut (Pendar Abu-abu & Biru Gelap) -->
-        <div class="absolute top-[-10%] right-[-5%] w-96 h-96 bg-blue-600/20 rounded-full filter blur-[120px] opacity-60 animate-blob"></div>
-        <div class="absolute bottom-[-10%] left-[-10%] w-80 h-80 bg-slate-600/20 rounded-full filter blur-[120px] opacity-60 animate-blob animation-delay-2000"></div>
+        <div class="absolute top-[-10%] right-[-5%] w-96 h-96 bg-blue-600/20 rounded-full filter blur-[120px] opacity-60 pointer-events-none"></div>
+        <div class="absolute bottom-[-10%] left-[-10%] w-80 h-80 bg-slate-600/20 rounded-full filter blur-[120px] opacity-60 pointer-events-none"></div>
 
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex flex-col-reverse md:flex-row items-center gap-12 relative z-10">
             <div class="flex-1" data-aos="fade-up" data-aos-duration="1200">
@@ -82,19 +77,19 @@
                     I am an Informatics student at Universitas Sebelas Maret (UNS) with a keen interest in technology development—specifically <span class="text-accentBlue font-medium">Artificial Intelligence, Machine Learning, Computer Vision, and Data Science</span>. I enjoy exploring new technologies, building innovative solutions, and honing my skills through collaborative experiences.
                 </p>
                 <div class="flex flex-wrap gap-4 text-sm font-medium">
-                    <a href="#projects" class="bg-gradient-to-r from-blue-700 to-blue-500 text-white px-8 py-3.5 rounded-full shadow-lg shadow-blue-900/40 hover:shadow-blue-500/30 hover:-translate-y-1 transition duration-300">Explore Projects</a>
-                    
-                    <a href="cv.html" class="bg-cardBg border border-softBorder text-textMain hover:border-accentBlue hover:text-accentBlue px-8 py-3.5 rounded-full text-sm font-medium transition duration-300">
-    View CV
-</a>
+                    <a href="#projects" class="bg-gradient-to-r from-blue-700 to-blue-500 text-white px-8 py-3.5 rounded-full shadow-lg shadow-blue-900/40 hover:shadow-blue-500/30 hover:-translate-y-1 transition duration-300">
+                        Explore Projects
+                    </a>
+                    <a href="cv.html" class="bg-cardBg border border-softBorder text-textMain hover:border-accentBlue hover:text-accentBlue px-8 py-3.5 rounded-full transition duration-300">
+                        View CV
+                    </a>
                 </div>
             </div>
+
             <div class="flex-1 flex justify-center" data-aos="zoom-in" data-aos-duration="1500" data-aos-delay="200">
                 <div class="relative w-64 h-64 md:w-80 md:h-80 group">
-                    <!-- Bingkai Halus Mewah -->
                     <div class="absolute inset-0 bg-gradient-to-tr from-slate-700 to-blue-900/50 rounded-full translate-x-4 translate-y-4 group-hover:translate-x-2 group-hover:translate-y-2 transition duration-500"></div>
-                    
-                    <img src="Foto Profil.png" alt="Hammam Profile" class="relative z-10 rounded-full w-full h-full object-cover shadow-soft border-4 border-cardBg group-hover:shadow-hover transition duration-500">
+                    <img src="Foto%20Profil.png" alt="Hammam Ibnu Adi Abdillah" class="relative z-10 rounded-full w-full h-full object-cover shadow-soft border-4 border-cardBg group-hover:shadow-hover transition duration-500">
                 </div>
             </div>
         </div>
@@ -154,22 +149,22 @@
             <div class="grid md:grid-cols-3 gap-8">
                 <!-- Project 1 -->
                 <div data-aos="fade-up" data-aos-delay="100" class="glass-card border border-softBorder rounded-3xl p-8 card-hover shadow-soft flex flex-col justify-between group">
-    <div>
-        <div class="flex justify-between items-center mb-6">
-            <div class="w-12 h-12 rounded-full bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-accentBlue group-hover:bg-btnBlue group-hover:text-white transition duration-300">
-                <i class="fa-solid fa-code"></i>
-            </div>
-            <a href="project-helmet-detection.html" class="text-textMuted hover:text-accentBlue text-lg"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-        </div>
-        <h4 class="text-xl font-bold mb-3 text-royalBlue group-hover:text-accentBlue transition">Helmet Detection</h4>
-        <p class="text-sm mb-6 text-textMuted font-light leading-relaxed">A real-time computer vision system built with YOLOv8 to detect motorcyclists and verify helmet compliance with high confidence accuracy.</p>
-    </div>
-    <ul class="flex flex-wrap gap-2 text-xs font-medium text-accentBlue">
-        <li class="bg-baseBg border border-softBorder px-3 py-1 rounded-full">YOLOv8</li>
-        <li class="bg-baseBg border border-softBorder px-3 py-1 rounded-full">Python</li>
-        <li class="bg-baseBg border border-softBorder px-3 py-1 rounded-full">Computer Vision</li>
-    </ul>
-</div>
+                    <div>
+                        <div class="flex justify-between items-center mb-6">
+                            <div class="w-12 h-12 rounded-full bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-accentBlue group-hover:bg-btnBlue group-hover:text-white transition duration-300">
+                                <i class="fa-solid fa-code"></i>
+                            </div>
+                            <a href="project-helmet-detection.html" aria-label="View Helmet Detection Project" class="text-textMuted hover:text-accentBlue text-lg"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                        <h4 class="text-xl font-bold mb-3 text-royalBlue group-hover:text-accentBlue transition">Helmet Detection</h4>
+                        <p class="text-sm mb-6 text-textMuted font-light leading-relaxed">A real-time computer vision system built with YOLOv8 to detect motorcyclists and verify helmet compliance with high confidence accuracy.</p>
+                    </div>
+                    <ul class="flex flex-wrap gap-2 text-xs font-medium text-accentBlue">
+                        <li class="bg-baseBg border border-softBorder px-3 py-1 rounded-full">YOLOv8</li>
+                        <li class="bg-baseBg border border-softBorder px-3 py-1 rounded-full">Python</li>
+                        <li class="bg-baseBg border border-softBorder px-3 py-1 rounded-full">Computer Vision</li>
+                    </ul>
+                </div>
 
                 <!-- Project 2 -->
                 <div data-aos="fade-up" data-aos-delay="200" class="glass-card border border-softBorder rounded-3xl p-8 card-hover shadow-soft flex flex-col justify-between group">
@@ -178,7 +173,7 @@
                             <div class="w-12 h-12 rounded-full bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-accentBlue group-hover:bg-btnBlue group-hover:text-white transition duration-300">
                                 <i class="fa-solid fa-brain"></i>
                             </div>
-                            <a href="project-helmet-classification.html" class="text-textMuted hover:text-accentBlue text-lg"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            <a href="project-helmet-classification.html" aria-label="View Helmet Classification Project" class="text-textMuted hover:text-accentBlue text-lg"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                         </div>
                         <h4 class="text-xl font-bold mb-3 text-royalBlue group-hover:text-accentBlue transition">Helmet Classification</h4>
                         <p class="text-sm mb-6 text-textMuted font-light leading-relaxed">An image classification project designed to distinguish between images of helmets and non-helmet instances using Transformer architecture.</p>
@@ -197,7 +192,7 @@
                             <div class="w-12 h-12 rounded-full bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-accentBlue group-hover:bg-btnBlue group-hover:text-white transition duration-300">
                                 <i class="fa-solid fa-leaf"></i>
                             </div>
-                            <a href="project-revalue.html" class="text-textMuted hover:text-accentBlue text-lg"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            <a href="project-revalue.html" aria-label="View ReValue Waste Bank Project" class="text-textMuted hover:text-accentBlue text-lg"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                         </div>
                         <h4 class="text-xl font-bold mb-3 text-royalBlue group-hover:text-accentBlue transition">ReValue – Waste Bank</h4>
                         <p class="text-sm mb-6 text-textMuted font-light leading-relaxed">An AI-powered digital waste bank platform designed to classify non-organic waste via computer vision, automatically estimate item weight, and calculate real-time economic value to incentivize sustainable recycling.</p>
@@ -303,11 +298,11 @@
         <p class="mb-12 text-lg text-textMuted font-light">Whether you have a question about AI, want to collaborate on a project, or just want to say hi, my inbox is always open.</p>
         
         <div class="flex justify-center gap-6 mb-12">
-            <a href="mailto:hammamibnu0605@gmail.com" class="w-12 h-12 rounded-full glass-card border border-softBorder shadow-sm flex items-center justify-center text-textMuted hover:bg-btnBlue hover:text-white hover:border-btnBlue hover:shadow-md transition hover:-translate-y-2"><i class="fa-regular fa-envelope text-xl"></i></a>
-            <a href="https://www.linkedin.com/in/hammam-ibnu-adi-abdillah-090935331" target="_blank" class="w-12 h-12 rounded-full glass-card border border-softBorder shadow-sm flex items-center justify-center text-textMuted hover:bg-btnBlue hover:text-white hover:border-btnBlue hover:shadow-md transition hover:-translate-y-2"><i class="fa-brands fa-linkedin text-xl"></i></a>
-            <a href="https://github.com/hammamibnu" target="_blank" class="w-12 h-12 rounded-full glass-card border border-softBorder shadow-sm flex items-center justify-center text-textMuted hover:bg-btnBlue hover:text-white hover:border-btnBlue hover:shadow-md transition hover:-translate-y-2"><i class="fa-brands fa-github text-xl"></i></a>
-            <a href="https://instagram.com/hmamibnu" target="_blank" class="w-12 h-12 rounded-full glass-card border border-softBorder shadow-sm flex items-center justify-center text-textMuted hover:bg-btnBlue hover:text-white hover:border-btnBlue hover:shadow-md transition hover:-translate-y-2"><i class="fa-brands fa-instagram text-xl"></i></a>
-            <a href="https://wa.me/6285877083814" target="_blank" class="w-12 h-12 rounded-full glass-card border border-softBorder shadow-sm flex items-center justify-center text-textMuted hover:bg-btnBlue hover:text-white hover:border-btnBlue hover:shadow-md transition hover:-translate-y-2"><i class="fa-brands fa-whatsapp text-xl"></i></a>
+            <a href="mailto:hammamibnu0605@gmail.com" aria-label="Email Hammam" class="w-12 h-12 rounded-full glass-card border border-softBorder shadow-sm flex items-center justify-center text-textMuted hover:bg-btnBlue hover:text-white hover:border-btnBlue hover:shadow-md transition hover:-translate-y-2"><i class="fa-regular fa-envelope text-xl"></i></a>
+            <a href="https://www.linkedin.com/in/hammam-ibnu-adi-abdillah-090935331" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Hammam" class="w-12 h-12 rounded-full glass-card border border-softBorder shadow-sm flex items-center justify-center text-textMuted hover:bg-btnBlue hover:text-white hover:border-btnBlue hover:shadow-md transition hover:-translate-y-2"><i class="fa-brands fa-linkedin text-xl"></i></a>
+            <a href="https://github.com/hammamibnu" target="_blank" rel="noopener noreferrer" aria-label="GitHub Hammam" class="w-12 h-12 rounded-full glass-card border border-softBorder shadow-sm flex items-center justify-center text-textMuted hover:bg-btnBlue hover:text-white hover:border-btnBlue hover:shadow-md transition hover:-translate-y-2"><i class="fa-brands fa-github text-xl"></i></a>
+            <a href="https://instagram.com/hmamibnu" target="_blank" rel="noopener noreferrer" aria-label="Instagram Hammam" class="w-12 h-12 rounded-full glass-card border border-softBorder shadow-sm flex items-center justify-center text-textMuted hover:bg-btnBlue hover:text-white hover:border-btnBlue hover:shadow-md transition hover:-translate-y-2"><i class="fa-brands fa-instagram text-xl"></i></a>
+            <a href="https://wa.me/6285877083814" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Hammam" class="w-12 h-12 rounded-full glass-card border border-softBorder shadow-sm flex items-center justify-center text-textMuted hover:bg-btnBlue hover:text-white hover:border-btnBlue hover:shadow-md transition hover:-translate-y-2"><i class="fa-brands fa-whatsapp text-xl"></i></a>
         </div>
 
         <a href="mailto:hammamibnu0605@gmail.com" class="bg-gradient-to-r from-blue-700 to-blue-500 text-white px-10 py-4 rounded-full shadow-lg shadow-blue-900/40 hover:shadow-blue-500/30 hover:-translate-y-1 transition duration-300 font-medium">Say Hello</a>
@@ -315,16 +310,16 @@
 
     <!-- Footer -->
     <footer class="py-8 text-center text-sm border-t border-softBorder bg-sectionBg text-textMuted">
-        <p class="hover:text-accentBlue transition cursor-pointer">Designed & Built by Hammam Ibnu Adi Abdillah © 2026</p>
+        <p class="hover:text-accentBlue transition">Designed & Built by Hammam Ibnu Adi Abdillah © 2026</p>
     </footer>
 
     <!-- Inisialisasi AOS Animation -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({
-            once: true,       
-            offset: 50,      
-            duration: 1000,    
+            once: true,
+            offset: 50,
+            duration: 1000,
             easing: 'ease-out-cubic',
         });
     </script>
