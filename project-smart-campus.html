@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Campus Crowdsourcing & Indoor Navigation | Hammam</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@600;700&display=swap');
+        body { background-color: #12151c; color: #94a3b8; font-family: 'Inter', sans-serif; }
+        h1, h2, h3 { font-family: 'Playfair Display', serif; color: #f8fafc; }
+    </style>
+</head>
+<body class="antialiased min-h-screen p-6 md:p-12">
+    <div class="max-w-5xl mx-auto">
+        <!-- Tombol Kembali -->
+        <a href="index.html#projects" class="inline-flex items-center gap-2 text-[#60a5fa] hover:text-white transition mb-8 text-sm font-medium">
+            <i class="fa-solid fa-arrow-left"></i> Back to Portfolio
+        </a>
+
+        <!-- Header & Deskripsi Utama Proyek -->
+        <div class="mb-12">
+            <div class="flex flex-wrap gap-2 text-xs font-medium text-[#60a5fa] mb-4">
+                <span class="bg-[#1f2430] border border-[#2e3545] px-3 py-1 rounded-full">Internet of Things</span>
+                <span class="bg-[#1f2430] border border-[#2e3545] px-3 py-1 rounded-full">Indoor Positioning</span>
+                <span class="bg-[#1f2430] border border-[#2e3545] px-3 py-1 rounded-full">BLE & Wi-Fi</span>
+                <span class="bg-[#1f2430] border border-[#2e3545] px-3 py-1 rounded-full">WebSocket</span>
+                <span class="bg-[#1f2430] border border-[#2e3545] px-3 py-1 rounded-full">Academic Project</span>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Smart Campus Crowdsourcing & Indoor Navigation</h1>
+            <p class="text-sm text-[#60a5fa] font-medium mb-6">Internet of Things & Indoor Positioning | Academic Project (TEMU Platform)</p>
+            
+            <p class="text-lg font-light leading-relaxed mb-6 text-[#cbd5e1] max-w-4xl">
+                An academic smart campus platform designed to help students and visitors navigate indoor environments, locate campus facilities, and report or reclaim lost items collaboratively. The system combines BLE Beacon and Wi-Fi indoor positioning concepts with a WebSocket-powered crowdsourcing web application (<strong class="text-white font-medium">TEMU</strong>) for real-time campus utility updates.
+            </p>
+
+            <!-- 3 Pilar Fitur Utama -->
+            <div class="grid md:grid-cols-3 gap-4 mt-8">
+                <div class="bg-[#181c26] p-5 rounded-2xl border border-[#2e3545]">
+                    <i class="fa-solid fa-route text-[#60a5fa] text-xl mb-3"></i>
+                    <h4 class="text-white font-semibold mb-1 text-sm font-sans">Campus Indoor Navigation</h4>
+                    <p class="text-xs font-light leading-relaxed">Designed an indoor navigation system concept to help students and visitors locate campus facilities and incident rooms accurately.</p>
+                </div>
+                <div class="bg-[#181c26] p-5 rounded-2xl border border-[#2e3545]">
+                    <i class="fa-solid fa-tower-broadcast text-[#60a5fa] text-xl mb-3"></i>
+                    <h4 class="text-white font-semibold mb-1 text-sm font-sans">BLE & Wi-Fi Positioning</h4>
+                    <p class="text-xs font-light leading-relaxed">Integrated Bluetooth Low Energy (BLE) Beacon and Wi-Fi-based positioning approaches to support indoor location estimation where GPS signals are limited.</p>
+                </div>
+                <div class="bg-[#181c26] p-5 rounded-2xl border border-[#2e3545]">
+                    <i class="fa-solid fa-arrows-rotate text-[#60a5fa] text-xl mb-3"></i>
+                    <h4 class="text-white font-semibold mb-1 text-sm font-sans">WebSocket Crowdsourcing</h4>
+                    <p class="text-xs font-light leading-relaxed">Designed a WebSocket-based crowdsourcing concept enabling real-time sharing of campus facility availability and lost-and-found reports.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Galeri Antarmuka Platform -->
+        <h2 class="text-2xl font-bold mb-6">Platform Prototype & Crowdsourcing Interface</h2>
+        <div class="grid md:grid-cols-2 gap-6">
+            <!-- Screenshot 1 -->
+            <div class="bg-[#1f2430] p-5 rounded-3xl border border-[#2e3545] shadow-lg flex flex-col justify-between">
+                <div class="bg-[#12151c] rounded-2xl p-3 mb-4 flex items-center justify-center border border-[#2e3545]/60">
+                    <img src="Beranda%20TEMU.jpg" alt="Smart Campus Crowdsourcing Home Interface" class="max-h-[300px] w-auto object-contain rounded-xl">
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-1 font-sans text-white">1. Campus Crowdsourcing Feed</h3>
+                    <p class="text-xs font-light leading-relaxed">Main dashboard enabling students to search and filter real-time campus reports by keyword, category, status, and indoor building location.</p>
+                </div>
+            </div>
+
+            <!-- Screenshot 2 -->
+            <div class="bg-[#1f2430] p-5 rounded-3xl border border-[#2e3545] shadow-lg flex flex-col justify-between">
+                <div class="bg-[#12151c] rounded-2xl p-3 mb-4 flex items-center justify-center border border-[#2e3545]/60">
+                    <img src="Buat%20Laporan.png" alt="Location-Tagged Report Form" class="max-h-[300px] w-auto object-contain rounded-xl">
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-1 font-sans text-white">2. Location-Tagged Report Submission</h3>
+                    <p class="text-xs font-light leading-relaxed">Structured submission form allowing users to log item details, indoor floor/room locations, reporter contacts, and supporting photos.</p>
+                </div>
+            </div>
+
+            <!-- Screenshot 3 -->
+            <div class="bg-[#1f2430] p-5 rounded-3xl border border-[#2e3545] shadow-lg flex flex-col justify-between">
+                <div class="bg-[#12151c] rounded-2xl p-3 mb-4 flex items-center justify-center border border-[#2e3545]/60">
+                    <img src="Laporan%20Saya.png" alt="User Report Tracking" class="max-h-[300px] w-auto object-contain rounded-xl">
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-1 font-sans text-white">3. Personal Report Tracking</h3>
+                    <p class="text-xs font-light leading-relaxed">User dashboard to monitor active submissions, review incoming claims, and update case completion status in real time.</p>
+                </div>
+            </div>
+
+            <!-- Screenshot 4 -->
+            <div class="bg-[#1f2430] p-5 rounded-3xl border border-[#2e3545] shadow-lg flex flex-col justify-between">
+                <div class="bg-[#12151c] rounded-2xl p-3 mb-4 flex items-center justify-center border border-[#2e3545]/60">
+                    <img src="Panel%20Admin.png" alt="Campus Admin Moderation Panel" class="max-h-[300px] w-auto object-contain rounded-xl">
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-1 font-sans text-white">4. Administrative Moderation Panel</h3>
+                    <p class="text-xs font-light leading-relaxed">Centralized oversight table for campus administrators to verify reports, track claim counts, and manage system records.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
